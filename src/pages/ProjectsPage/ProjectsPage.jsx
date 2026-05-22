@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout/Layout';
 import { useLanguage } from '../../i18n/LanguageContext';
@@ -7,15 +7,23 @@ import styles from './ProjectsPage.module.css';
 
 export default function ProjectsPage({ section }) {
   const { t, lang } = useLanguage();
+  
+  // Ces deux hooks permettent de lire et changer l'URL
+  const { slug } = useParams();
+  const navigate = useNavigate();
+
   const folders = sections[section] || [];
 
-  const [openIndex, setOpenIndex] = useState(null);
+  // On regarde si l'URL contient le nom d'un projet (le "slug")
+  const openIndex = slug ? folders.findIndex(f => f.slug === slug) : -1;
 
-  const open = (i) => setOpenIndex(i);
-  const close = () => setOpenIndex(null);
+  // Fonctions pour naviguer en changeant l'URL
+  const open = (projectSlug) => navigate(`/${section}/${projectSlug}`);
+  const close = () => navigate(`/${section}`);
 
   // ---------- VUE GRILLE : Accueil de la section ----------
-  if (openIndex === null) {
+  // Si le slug dans l'URL est vide ou ne correspond à rien, on affiche la grille
+  if (openIndex === -1) {
     return (
       <Layout>
         <div className={styles.grid}>
@@ -23,7 +31,7 @@ export default function ProjectsPage({ section }) {
             <motion.button
               key={f.slug}
               className={styles.folder}
-              onClick={() => open(i)}
+              onClick={() => open(f.slug)}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
@@ -44,7 +52,6 @@ export default function ProjectsPage({ section }) {
   // ---------- VUE DÉTAIL : Image + Texte + Galerie ----------
   const f = folders[openIndex];
   
-  // On sépare la première image (pour le haut) des autres (pour la grille du bas)
   const mainPhoto = f.photos[0];
   const otherPhotos = f.photos.slice(1);
 
@@ -52,6 +59,7 @@ export default function ProjectsPage({ section }) {
     <Layout>
       <div className={styles.detailWrapper}>
         
+        {/* Le bouton retour de votre site */}
         <button className={styles.back} onClick={close}>← retour</button>
         
         {/* SECTION HAUT : Image Principale + Infos */}
