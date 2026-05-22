@@ -16,26 +16,28 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  cursor: pointer; /* Indique qu'on peut cliquer */
 }
 
 .thumbWrap {
   display: block;
   overflow: hidden;
   aspect-ratio: 3 / 4;
+  background-color: #f5f5f5; /* Fond très léger en attendant l'image */
 }
 
-/* Flou par défaut → net au survol (demande explicite de Cyrielle) */
+/* NOUVEL EFFET : Image nette de base, léger zoom fluide au survol */
 .thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(7px);
-  transform: scale(1.05); /* évite le bord flou visible */
-  transition: filter 0.5s ease, transform 0.5s ease;
+  transform: scale(1); /* Taille normale */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
 }
+
 .folder:hover .thumb {
-  filter: blur(0);
-  transform: scale(1);
+  transform: scale(1.04); /* Zoom très léger et élégant */
+  opacity: 0.9; /* Baisse de l'opacité très légère pour l'effet "pro" */
 }
 
 .thumbTitle {

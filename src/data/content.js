@@ -14,6 +14,13 @@ function load(glob) {
 
 // ---- WORK (6 projets) ----
 const wPoseurs   = load(import.meta.glob('../assets/photos/work/1-les-poseurs/*.jpg', { eager: true, query: '?url', import: 'default' }));
+// ---- COUVERTURES (Miniatures de premier plan) ----
+import cover01 from '../assets/photos/covers/01.jpg';
+import cover02 from '../assets/photos/covers/02.jpg';
+import cover03 from '../assets/photos/covers/03.jpg';
+import cover04 from '../assets/photos/covers/04.jpg';
+import cover05 from '../assets/photos/covers/05.jpg';
+import cover06 from '../assets/photos/covers/06.jpg';
 const wInterieur = load(import.meta.glob('../assets/photos/work/2-interieur/*.jpg', { eager: true, query: '?url', import: 'default' }));
 const wTissage   = load(import.meta.glob('../assets/photos/work/3-tissage/*.jpg', { eager: true, query: '?url', import: 'default' }));
 const wWool      = load(import.meta.glob('../assets/photos/work/4-wool-production/*.jpg', { eager: true, query: '?url', import: 'default' }));
@@ -42,10 +49,11 @@ export const pdfPages = {
 
 // ---- "Dernières œuvres" affichées sur la page d'accueil ----
 // (3 visuels au choix — modifie les images ou titres ici)
+// ---- "Dernières œuvres" affichées sur la page d'accueil ----
 export const recentWorks = [
-  { img: wPoseurs[2]   ?? wPoseurs[0],   title: 'Les poseurs',     year: '2024' },
-  { img: wInterieur[3] ?? wInterieur[0], title: 'Intérieur',       year: '2024' },
-  { img: wFleur[3]     ?? wFleur[0],     title: 'Fleur en Strass', year: '2025' },
+  { img: cover01, title: 'Les poseurs',     year: '2024' },
+  { img: cover02, title: 'Intérieur',       year: '2024' },
+  { img: cover05, title: 'Fleur en Strass', year: '2025' },
 ];
 
 // Textes "info" génériques (à personnaliser par projet)
@@ -60,12 +68,12 @@ const infoTirage = {
 
 export const sections = {
   work: [
-    { slug: 'les-poseurs',     title: 'Les poseurs', year: '2024', photos: wPoseurs,   cover: wPoseurs[2]   ?? wPoseurs[0],   info: infoTodo },
-    { slug: 'interieur',       title: 'Intérieur',                 photos: wInterieur, cover: wInterieur[3] ?? wInterieur[0], info: infoTodo },
-    { slug: 'tissage',         title: 'Tissage',                   photos: wTissage,   cover: wTissage[0],                    info: infoTodo },
-    { slug: 'wool-production', title: 'Wool production',           photos: wWool,      cover: wWool[0],                       info: infoTodo },
-    { slug: 'fleur-en-strass', title: 'Fleur en Strass',           photos: wFleur,     cover: wFleur[3]    ?? wFleur[0],      info: infoTodo },
-    { slug: 'reflect-pattern', title: 'Reflect Pattern',           photos: wReflect,   cover: wReflect[0],                    info: infoTodo },
+    { slug: 'les-poseurs',     title: 'Les poseurs', year: '2024', photos: wPoseurs,   cover: cover01, info: infoTodo },
+    { slug: 'interieur',       title: 'Intérieur',                 photos: wInterieur, cover: cover02, info: infoTodo },
+    { slug: 'tissage',         title: 'Tissage',                   photos: wTissage,   cover: cover03, info: infoTodo },
+    { slug: 'wool-production', title: 'Wool production',           photos: wWool,      cover: cover04, info: infoTodo },
+    { slug: 'fleur-en-strass', title: 'Fleur en Strass',           photos: wFleur,     cover: cover05, info: infoTodo },
+    { slug: 'reflect-pattern', title: 'Reflect Pattern',           photos: wReflect,   cover: cover06, info: infoTodo },
   ],
 
   print: [
