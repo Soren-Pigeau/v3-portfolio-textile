@@ -81,38 +81,37 @@ export const sections = {
   ],
 };
 
-// --- CV (inchangé) — à VÉRIFIER, transcrit du PDF ---
+// --- CV transcrit depuis le nouveau PDF ---
 export const cv = {
   bourses: [
-    '2026 — Homo Faber Fellowship, Fondation Michelangelo, avec l\u2019atelier Mérigot Sanzay. Venise – Paris.',
+    "2026 — Homo Faber Fellowship - Fondation Michelangelo. Avec l'atelier Mérigot Sanzay, Venise - Paris.",
   ],
   expos: [
-    '2025 — Eurofabrique, Gaîté Lyrique, Paris.',
-    '2025 — Lignes de Vie, cur. Mayfly Gallery, Bastille Design Center, Paris.',
-    '2022 — Désert Samples, Galerie Octave Cowbell, Metz.',
+    "2024 — Eurofabrique - Restitution à Cluj-Napoca et à la Gaité Lyrique, Paris.",
+    "2023 — Lignes de Vie, cur. Mayfly Gallery, Bastille Design Center, Paris.",
+    "2022 — Désert Samples - Galerie Octave Cowbell, Metz.",
   ],
   freelance: [
-    '2026 — Tisserande, Diane Collongues, atelier Mérigot Sanzay, Paris.',
-    '2026 — Tisserande, Marie Hazard, projet Ad Hoc, Paris.',
-    '2024-2025 — Chargée de communication, Carel Paris, Paris.',
-    '2025 — Assistante éditoriale, Revue Revive / studio Anémone Image, Paris.',
-    '2022 — Tirage argentique, Studio Pauleon, La Rochelle.',
+    "2026 — Tisserande - Diane Collongues, atelier Mérigot Sanzay, Paris.",
+    "2026 — Tisserande - Marie Hazard, project Ad Hoc, Paris.",
+    "2024-2025 — Chargée de communication - Carel Paris, Paris.",
+    "2023 — Assistante éditoriale - Revue Revive, studio Anémone Image, artistes Amir Tikriti et Célia Cotelle, Paris.",
+    "2022 — Tirage argentique - Studio Pauléon, La Rochelle.",
   ],
   workshop: [
-    '2025 — Technique modéliste, Patrice Datarius, Paris.',
-    '2024-2025 — Eurofabrique, restitutions à Cluj-Napoca et à la Gaîté Lyrique, Paris.',
-    '2025 — Vidéo, Lou Fauroux, Mulhouse.',
-    '2022 — Désert Samples, Marie Quéau, Mulhouse.',
+    "2025 — Technique modélisme - Patrice Dutartre et Catarina Knoch-mulot, Paris.",
+    "2023 — Vidéo - Lou Fauroux, Mulhouse.",
+    "2022 — Désert Samples - Marie Quéau, Mulhouse.",
   ],
   formations: [
-    '2026 — Mastère Spécialisé Management de la Mode et du Luxe (avec mention), Institut Français de la Mode, Paris.',
-    '2024 — DNSEP option Design Textile (avec mention), Haute École des Arts du Rhin, Mulhouse.',
-    '2022 — DNA option Design Textile (félicitations du jury), Haute École des Arts du Rhin, Mulhouse.',
-    '2020 — CPGE Arts et Design (avec mention), Toulouse.',
+    "2026 — Mastère Spécialisé Management de la Mode et du Luxe - avec mention - Institut Français de la Mode, Paris.",
+    "2024 — DNSEP option Design Textile - avec mention - Haute École des Arts du Rhin, Mulhouse.",
+    "2022 — DNA option Design Textile - avec les félicitations du jury - Haute École des Arts du Rhin, Mulhouse.",
+    "2020 — CPGE Arts et Design - avec mention, Toulouse.",
   ],
   evenements: [
-    '2025 — Performance Fleur en Strass, vernissage « Mémoire de l\u2019impression », La Filature Scène Nationale, Mulhouse.',
-    '2025 — Performance Fleur en Strass, série de 5 soirées au DOC, Paris.',
-    '2025 — VJ pour le festival Diététic Park, Chatou.',
+    "2024 — Performance Fleur en Strass - Vernissage de l'exposition Ministère de l'impression à la Filature Scène Nationale, Mulhouse.",
+    "2023 — Performance Fleur en Strass - série de 3 soirées de performances au Doc (19ème), Paris.",
+    "2023 — VJ pour le Festival Elektric Park , Chatou.",
   ],
 };

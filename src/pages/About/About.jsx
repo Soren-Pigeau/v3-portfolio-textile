@@ -8,7 +8,7 @@ import styles from './About.module.css';
 
 // ── Réglage : le CV s'affiche en PDF intégré (true) OU en texte bilingue (false)
 //    Mets false si tu préfères garder la version typographiée FR/EN (dans content.js).
-const CV_AS_PDF = true;
+const CV_AS_PDF = false;
 
 export default function About() {
   const { t } = useLanguage();
