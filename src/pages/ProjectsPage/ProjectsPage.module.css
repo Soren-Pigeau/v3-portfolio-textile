@@ -1,0 +1,113 @@
+/* ---------- Grille de dossiers ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  align-items: end;
+  padding: 7rem 2rem 7rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.folder {
+  background: none;
+  border: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.thumbWrap {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+}
+
+/* Flou par défaut → net au survol (demande explicite de Cyrielle) */
+.thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(7px);
+  transform: scale(1.05); /* évite le bord flou visible */
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+.folder:hover .thumb {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.thumbTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+/* ---------- Vue détail ---------- */
+.detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding: 7rem 2rem 7rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.photo { width: 100%; height: auto; }
+
+/* Colonne texte : tout aligné à droite */
+.side {
+  position: sticky;
+  top: 7rem;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.back {
+  background: none; border: none; color: var(--color-muted);
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+}
+.projectTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.infosBtn {
+  background: none; border: none; color: inherit;
+  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em;
+  border-bottom: 1px solid currentColor; padding-bottom: 3px;
+}
+.infoText {
+  margin-top: 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  /* trait rouge de la maquette, à droite */
+  border-right: 2px solid #e0322d;
+  padding-right: 1rem;
+  max-width: 360px;
+}
+.order {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 1.5rem; }
+  .detail { grid-template-columns: 1fr; gap: 2.5rem; padding: 6rem 1.5rem; }
+  .side { position: static; }
+}

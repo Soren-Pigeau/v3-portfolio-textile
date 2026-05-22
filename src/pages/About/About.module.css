@@ -1,0 +1,68 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 7rem 2rem;
+}
+
+/* Sous-nav alignée à droite */
+.tabs {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+.tabs button {
+  background: none; border: none; color: inherit;
+  padding-bottom: 3px; border-bottom: 1px solid transparent;
+}
+.tabs button:hover { border-bottom-color: currentColor; }
+.tabs .tabActive { border-bottom-color: currentColor; }
+
+/* Infos : contact + bio, alignés en haut */
+.infos {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3rem;
+  align-items: start;
+}
+.contact { display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.9rem; }
+.contact a, .contact span { display: inline-flex; align-items: center; gap: 0.55rem; }
+.contact :global(.ico) { flex-shrink: 0; opacity: 0.85; }
+.contact a:hover :global(.ico) { opacity: 1; }
+.contact a { transition: opacity 0.2s ease; }
+.bio { max-width: 620px; }
+.bio p { margin-bottom: 0.9rem; font-size: 0.98rem; line-height: 1.65; }
+.portrait { margin-top: 1.5rem; width: 100%; max-width: 320px; }
+
+/* Portfolio */
+.portfolio { padding-top: 1rem; }
+.download {
+  font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em;
+  border: 1px solid currentColor; padding: 0.9rem 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.download:hover { background: var(--color-text); color: var(--color-bg); }
+
+/* CV : grille de rubriques, alignées en haut */
+.cv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 3rem;
+  align-items: start;
+}
+.cvBlock { font-size: 0.82rem; line-height: 1.55; }
+.cvTitle {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em;
+  margin-bottom: 0.9rem; font-weight: 500;
+}
+.cvBlock ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.cvBlock li { color: var(--color-text); }
+
+@media (max-width: 768px) {
+  .page { padding: 6rem 1.5rem; }
+  .infos { grid-template-columns: 1fr; gap: 2rem; }
+  .cv { grid-template-columns: 1fr; gap: 2rem; }
+}
