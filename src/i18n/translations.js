@@ -20,7 +20,7 @@ export const translations = {
     footer: {
       eyebrow: 'Contact',
       title: 'Pour toute demande',
-      subtitle: 'Œuvres disponibles à la vente.\nContact par e-mail uniquement.',
+      subtitle: 'Contact par e-mail.',
       button: "Écrire à l'artiste",
       rights: 'Tous droits réservés',
     },
@@ -62,7 +62,7 @@ export const translations = {
     footer: {
       eyebrow: 'Contact',
       title: 'Get in touch',
-      subtitle: 'Works available for sale.\nBy email only.',
+      subtitle: 'By email.',
       button: 'Email the artist',
       rights: 'All rights reserved',
     },
