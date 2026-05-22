@@ -45,62 +45,64 @@
   font-size: 1.05rem;
 }
 
-/* ---------- Vue détail ---------- */
-.detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  padding: 7rem 2rem 7rem;
+/* ---------- Vue détail repensée ---------- */
+.detailWrapper {
+  padding: 5rem 2rem 7rem;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: start;
 }
 
-.photos {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.photo { width: 100%; height: auto; }
-
-/* Colonne texte : tout aligné à droite */
-.side {
-  position: sticky;
-  top: 7rem;
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
 .back {
   background: none; border: none; color: var(--color-muted);
   font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
+.back:hover {
+  color: var(--color-text);
+}
+
+/* --- Section Haut : Image 1 (gauche) + Texte (droite) --- */
+.heroSection {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* L'image est légèrement plus large que le texte */
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 6rem;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sideInfo {
+  position: sticky;
+  top: 7rem; /* Garde le texte fixe à l'écran si on scrolle sur la première image */
+  text-align: left;
+}
+
 .projectTitle {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
 }
-.infosBtn {
-  background: none; border: none; color: inherit;
-  font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.18em;
-  border-bottom: 1px solid currentColor; padding-bottom: 3px;
-}
+
 .infoText {
-  margin-top: 1.5rem;
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--color-text);
-  /* trait rouge de la maquette, à droite */
-  border-right: 2px solid #e0322d;
-  padding-right: 1rem;
-  max-width: 360px;
 }
+.infoText p {
+  margin-bottom: 0.8rem;
+}
+
 .order {
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -108,8 +110,30 @@
   padding-bottom: 3px;
 }
 
+/* --- Section Bas : Galerie Mixte (Masonry effect) --- */
+.photoGallery {
+  /* Aligne les images en 2 colonnes comme sur Pinterest */
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+.galleryItem {
+  break-inside: avoid; /* Empêche de couper une image entre les deux colonnes */
+  margin-bottom: 2rem;
+}
+
+.galleryItem img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Responsive (Mobile) --- */
 @media (max-width: 768px) {
-  .grid { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 1.5rem; }
-  .detail { grid-template-columns: 1fr; gap: 2.5rem; padding: 6rem 1.5rem; }
-  .side { position: static; }
+  .detailWrapper { padding: 5rem 1.5rem; }
+  .heroSection { grid-template-columns: 1fr; gap: 2.5rem; }
+  .sideInfo { position: static; }
+  
+  /* Sur mobile, on repasse à une seule colonne pour la galerie */
+  .photoGallery { column-count: 1; }
 }
